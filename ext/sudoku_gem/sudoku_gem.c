@@ -12,7 +12,7 @@ VALUE sudoku_gem_solve(VALUE self, VALUE rb_puzzle)
 
   if (!sudoku.read_puzzle_from_string(cpp_puzzle))
   {
-    return T_NIL;
+    return Qnil;
   }
 
   sudoku.solve_colorability_style();
