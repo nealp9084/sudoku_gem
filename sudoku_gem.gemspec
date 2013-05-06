@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = 'sudoku_gem'
-  s.version = '1.0.0'
+  s.version = '1.0.1'
   s.summary = 'Ruby interface to a C++ sudoku solver'
   s.authors = ['Neal Patel']
   s.license = 'GPL-3'

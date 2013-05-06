@@ -103,7 +103,10 @@ bool Sudoku::parse_puzzle(std::istream& f)
   this->grid.reset(n);
 
   //put in the first row
-  this->insert_row(tokens, 0);
+  if (!this->insert_row(tokens, 0))
+  {
+    return false;
+  }
 
   //read n-1 lines
   for (std::size_t y = 1; y < n; y++)
@@ -119,7 +122,10 @@ bool Sudoku::parse_puzzle(std::istream& f)
     }
 
     //insert that row
-    this->insert_row(tokens, y);
+    if (!this->insert_row(tokens, y))
+    {
+      return false;
+    }
   }
 
   return true;
