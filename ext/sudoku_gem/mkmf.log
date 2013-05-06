@@ -1,0 +1,27 @@
+have_library: checking for main() in -lstdc++... -------------------- yes
+
+"gcc -o conftest -I/home/neal/.rvm/rubies/ruby-2.0.0-p0/include/ruby-2.0.0/x86_64-linux -I/home/neal/.rvm/rubies/ruby-2.0.0-p0/include/ruby-2.0.0/ruby/backward -I/home/neal/.rvm/rubies/ruby-2.0.0-p0/include/ruby-2.0.0 -I.     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC --std=c++11 conftest.c  -L. -L/home/neal/.rvm/rubies/ruby-2.0.0-p0/lib -Wl,-R/home/neal/.rvm/rubies/ruby-2.0.0-p0/lib -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/home/neal/.rvm/rubies/ruby-2.0.0-p0/lib -L/home/neal/.rvm/rubies/ruby-2.0.0-p0/lib -lruby  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+cc1: warning: command line option ‘-std=c++11’ is valid for C++/ObjC++ but not for C [enabled by default]
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(void) {return 0;}
+/* end */
+
+"gcc -o conftest -I/home/neal/.rvm/rubies/ruby-2.0.0-p0/include/ruby-2.0.0/x86_64-linux -I/home/neal/.rvm/rubies/ruby-2.0.0-p0/include/ruby-2.0.0/ruby/backward -I/home/neal/.rvm/rubies/ruby-2.0.0-p0/include/ruby-2.0.0 -I.     -O3 -fno-fast-math -ggdb3 -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-long-long -Wno-missing-field-initializers -Wunused-variable -Wpointer-arith -Wwrite-strings -Wdeclaration-after-statement -Wimplicit-function-declaration  -fPIC --std=c++11 conftest.c  -L. -L/home/neal/.rvm/rubies/ruby-2.0.0-p0/lib -Wl,-R/home/neal/.rvm/rubies/ruby-2.0.0-p0/lib -L. -fstack-protector -rdynamic -Wl,-export-dynamic     -Wl,-R -Wl,/home/neal/.rvm/rubies/ruby-2.0.0-p0/lib -L/home/neal/.rvm/rubies/ruby-2.0.0-p0/lib -lruby -lstdc++  -lpthread -lrt -ldl -lcrypt -lm   -lc"
+cc1: warning: command line option ‘-std=c++11’ is valid for C++/ObjC++ but not for C [enabled by default]
+conftest.c: In function ‘t’:
+conftest.c:6:32: warning: variable ‘p’ set but not used [-Wunused-but-set-variable]
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: /*top*/
+4: int main(void) {return 0;}
+5: extern int t(void);
+6: int t(void) { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+/* end */
+
+--------------------
+
